@@ -10,16 +10,16 @@ class Venue < ActiveRecord::Base
 
 end
 
-
-attr_reader
-
-def initialize(params)
-  @event = params[:symbol]
-
-    #event name
-    #date and time
-    #description (140 chars)
-    #venue name (hyperlinked to venue page)
-    #venue address
-
-end
+#
+# attr_reader
+#
+# def initialize(params)
+#   @event = params[:symbol]
+#
+#     #event name
+#     #date and time
+#     #description (140 chars)
+#     #venue name (hyperlinked to venue page)
+#     #venue address
+#
+# end
