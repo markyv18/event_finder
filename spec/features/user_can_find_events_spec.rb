@@ -21,11 +21,10 @@ describe "as a user" do
     end
 
     # For each event I can see...
-    expect(page).to have_content()      #event name
-    expect(page).to have_content()      #date and time
-    expect(page).to have_content()      #description (140 chars)
-    expect(page).to have_content()      #venue name (hyperlinked to venue page)
-    expect(page).to have_content()      #venue address
-
+    expect(page).to have_content("Denver Winery Tour")      #event name
+    expect(page).to have_content("2017-07-02 11:00:00")      #date and time
+    expect(page).to have_content("Mile High Wine Tours is the bes")      #description (140 chars)
+    expect(page).to have_content(" Mile High Wine Tours")      #venue name (hyperlinked to venue page)
+    expect(page).to have_content("817 17th St.")      #venue address
   end
 end

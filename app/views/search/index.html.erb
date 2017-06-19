@@ -7,10 +7,8 @@ Number of Events: 16
 Event: <%=event[:title] %><br>
 Date/Time: <%= event[:start_time] %><br>
 description: <%= truncate(event[:description], :length => 140)   %><br>
-Venue: <%= event[:venue_name] %><br>
-
-<li><a href= <%=  %>></a>
-<%= event[:venue_url] %><br>
+<a href= <%= event[:venue_url] %> > Venue: <%= event[:venue_name] %> </a>
+<br>
 Address: <%= event[:venue_address] %><br>
 <br><br><br><br>
 <% end %><br>
