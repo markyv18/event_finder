@@ -5,7 +5,7 @@ describe "as a user" do
   it "i can enter a zipcode and find all events for that zip sorted by popularity " do
     visit '/'
 
-    fill_in 'zip', with: "80202"
+    fill_in 'q', with: "80202"
 
     click_on "Find Events"
 
@@ -21,11 +21,11 @@ describe "as a user" do
     end
 
     # For each event I can see...
-    expect(page).to have_content      #event name
-    expect(page).to have_content      #date and time
-    expect(page).to have_content      #description (140 chars)
-    expect(page).to have_content      #venue name (hyperlinked to venue page)
-    expect(page).to have_content      #venue address
+    expect(page).to have_content()      #event name
+    expect(page).to have_content()      #date and time
+    expect(page).to have_content()      #description (140 chars)
+    expect(page).to have_content()      #venue name (hyperlinked to venue page)
+    expect(page).to have_content()      #venue address
 
   end
 end
