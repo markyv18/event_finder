@@ -1,2 +1,16 @@
-<% @events.each do  %>
-  
+<h3> <%= @event_number %> events for July</h3>
+<br><br><br>
+Number of Events: 16
+<br><br><br>
+
+<% @events.each do |event| %>
+Event: <%=event[:title] %><br>
+Date/Time: <%= event[:start_time] %><br>
+description: <%= truncate(event[:description], :length => 140)   %><br>
+Venue: <%= event[:venue_name] %><br>
+
+<li><a href= <%=  %>></a>
+<%= event[:venue_url] %><br>
+Address: <%= event[:venue_address] %><br>
+<br><br><br><br>
+<% end %><br>
