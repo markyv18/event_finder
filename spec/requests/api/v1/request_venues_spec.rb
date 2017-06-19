@@ -37,20 +37,27 @@ describe "api end points for venues" do
 
     response_item1 = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response_item1["id"]).to eq(venue.id)
-    expect(response_item1["name"]).to eq(venue.name)
-    expect(response_item1["address"]).to eq(venue.address)
-    expect(response_item1["url"]).to eq(venue.url)
-    expect(response_item1["latitude"]).to eq(venue.latitude)
-    expect(response_item1["longitude"]).to eq(venue.longitude)
+    expect(response_item1[:id]).to eq(venue.id)
+    expect(response_item1[:name]).to eq(venue.name)
+    expect(response_item1[:address]).to eq(venue.address)
+    expect(response_item1[:url]).to eq(venue.url)
+    expect(response_item1[:latitude]).to eq(venue.latitude)
+    expect(response_item1[:longitude]).to eq(venue.longitude)
   end
-
-
 
   # And it successfully deletes the venue from the database
   # Then I should receive a 204 JSON response
   it "When I send a DELETE request to /api/v1/venues/1" do
-    delete '/api/v1/venues/1'
+    venue = Venue.create(name: "Bob", address: "1331 17th street", url: "http:woo!", latitude: "40.0", longitude: "-105.0")
+
+    expect(Venue.count).to eq(1)
+
+    delete "/api/v1/venues/#{venue.id}"
+
+    expect(response).to be_success
+    expect(Venue.count).to eq(0)
+    expect{Venue.find(item.id)}.to raise_error(ActiveRecord::RecordNotFound)
+
   end
 
 
