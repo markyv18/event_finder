@@ -17,7 +17,7 @@ describe "as a user" do
 
     # And I can see a header `196 events for July`.
     within('h3') do
-      expect(page).to have_content("196 events for July")
+      expect(page).to have_content("195 events for July")
     end
 
     # For each event I can see...
